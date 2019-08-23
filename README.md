@@ -62,6 +62,25 @@ You can build Docker images by yourself or buy prebuilt Docker images for **$25*
 If you want to see how Ambar works w/o installing it, try our [live demo](https://app.ambar.cloud/). No signup required.
 
 ## Building the images yourself
+BASH Script:
+```
+mkdir ambar
+cd ambar
+git clone https://github.com/aaa-bbb111222/ambar.git
+curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+cd ambar
+cd FrontEnd
+apt-get install -y npm
+npm install
+npm run compile
+cd ../
+docker-compose build
+echo ************************
+echo Copy your files into /opt/ambar/data and run Ambar via docker-compose up
+echo DUN
+```
+
 
 All of the images required to run Ambar can be built by the user. In general, each image can be built by navigating into the directory of the component in question, performing any compilation steps required, then building the image like so:
 
