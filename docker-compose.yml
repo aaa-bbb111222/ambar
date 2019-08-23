@@ -10,7 +10,7 @@ services:
     environment:
       - cacheSizeGB=2
     volumes:
-      - /opt/ambar/db:/data/db
+      - /home/k/ambar/db:/data/db
     expose:
       - "27017"
   es:
@@ -33,7 +33,7 @@ services:
     cap_add:
       - IPC_LOCK
     volumes:
-      - /opt/ambar/es:/usr/share/elasticsearch/data
+      - /home/k/ambar/es:/usr/share/elasticsearch/data
   rabbit:
     restart: always
     networks:
@@ -44,7 +44,7 @@ services:
       - "15672"
       - "5672"
     volumes:
-      - /opt/ambar/rabbit:/var/lib/rabbitmq
+      - /home/k/ambar/rabbit:/var/lib/rabbitmq
   redis:
     restart: always
     sysctls:
