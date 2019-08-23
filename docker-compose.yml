@@ -127,7 +127,7 @@ services:
     environment:
       - name=mycrawler
     volumes:
-      - /opt/ambar/sources:/usr/data
+      - /opt/ambar/data:/usr/data
   frontend:
     depends_on:
       webapi:
